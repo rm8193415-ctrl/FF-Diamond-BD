@@ -1490,49 +1490,7 @@ setInterval(fetchFreshAccountConfig, 15000);
   </div>
 </div>
 })();// Payment method click
-// Payment method click
-document.querySelectorAll('.payment-method').forEach(function(btn){
-    btn.addEventListener('click', function(){
 
-        var method = btn.getAttribute('data-method') || 'Payment';
-        var packageName = 'Diamond Package';
-        var packagePrice = '0';
-
-        var oldPage = document.getElementById('ff-payment-page');
-        if(oldPage) oldPage.remove();
-
-        var page = document.createElement('div');
-        page.id = 'ff-payment-page';
-
-        page.style.cssText = 'position:fixed;inset:0;z-index:999999;background:#f4f8ff;overflow:auto;font-family:Arial,sans-serif;';
-
-        page.innerHTML = 
-            '<div style="background:linear-gradient(135deg,#1769e8,#2854d9);color:#fff;padding:22px;text-align:center;font-size:22px;font-weight:700;">💳 Payment Page</div>' +
-            '<div style="padding:20px;">' +
-                '<div style="background:#fff;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 5px 20px rgba(0,0,0,0.08);">' +
-                    '<div style="color:#777;margin-bottom:8px;">Selected Package</div>' +
-                    '<div style="font-size:21px;font-weight:700;color:#1769e8;margin-bottom:15px;">' + packageName + '</div>' +
-                '</div>' +
-                '<div style="color:#555;">Payment Method</div>' +
-                '<div style="font-size:20px;font-weight:700;margin-top:6px;">' + method + '</div>' +
-                '</div>' +
-                '<div style="margin-top:18px;padding:15px;border-radius:12px;background:#eef5ff;color:#1769e8;font-size:24px;font-weight:700;">BDT ' + packagePrice + '</div>' +
-            '</div>' +
-            '<div style="background:#fff;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 5px 20px rgba(0,0,0,0.08);">' +
-                '<div style="font-size:18px;font-weight:700;margin-bottom:10px;">' + method + ' Payment</div>' +
-            '</div>' +
-            '<p style="color:#777;line-height:1.6;">এটি বর্তমানে পরীক্ষামূলক Payment Page। এখন কোনো আসল টাকা নেওয়া হবে না।</p>' +
-            '<button type="button" id="ff-payment-back" style="width:100%;border:0;border-radius:12px;padding:15px;background:#1769e8;color:#fff;font-size:18px;font-weight:700;cursor:pointer;">← ফিরে যান</button>' +
-        '</div>';
-
-        document.body.appendChild(page);
-
-        document.getElementById('ff-payment-back').onclick = function(){
-            page.remove();
-        };
-
-    });
-});
 
     var oldPage = document.getElementById('ff-payment-page');
     if(oldPage) oldPage.remove();
