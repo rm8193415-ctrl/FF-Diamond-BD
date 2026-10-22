@@ -1446,16 +1446,49 @@ setInterval(fetchFreshAccountConfig, 15000);
     pn.className='pname ok';
     pn.innerHTML='<svg class="i"><use href="#chk"/></svg>আইডি: '+uid;
   };
-  buy.addEventListener('click',function(e){
-    if(!isLoggedIn){ if(LOGIN_URL==='#')e.preventDefault(); return; }
-    e.preventDefault();
-    var uid=inp.value.trim();
-    if(!sel.name){toast('আগে একটি রিচার্জ প্যাকেজ সিলেক্ট করুন');return;}
-    if(uid.length<6){toast('সঠিক প্লেয়ার আইডি দিন');inp.focus();return;}
-    // TODO: অর্ডার সাবমিট লজিক এখানে বসান
-    toast('অর্ডার সাবমিট হচ্ছে... ('+sel.name+', '+sel.price+' টাকা, '+sel.pay+')');
-  });
-  upd();
+  <div class="pv-body">
+  <div class="po-grid">
+
+    <div role="button" tabindex="0"
+         class="po on" data-pay="Wallet Pay">
+      <div class="pbx">
+        <img src="wallet.jpg" alt="Wallet Pay">
+      </div>
+      <div class="pft">Wallet Pay</div>
+    </div>
+
+    <div role="button" tabindex="0"
+         class="po" data-pay="Instant Pay">
+      <div class="pbx">
+        <img src="andmoney.jpg" alt="Instant Pay">
+      </div>
+      <div class="pft">Instant Pay</div>
+    </div>
+
+  </div>
+
+  <div id="mobile-payment-options" hidden>
+    <button type="button" class="payment-method"
+            data-method="bKash">
+      <img src="bkash.png" alt="bKash">
+      <span>বিকাশ (bKash)</span>
+    </button>
+
+    <button type="button" class="payment-method"
+            data-method="Nagad">
+      <img src="nagad.png" alt="Nagad">
+      <span>নগদ (Nagad)</span>
+    </button>
+
+    <button type="button" class="payment-method"
+            data-method="Rocket">
+      <img src="rocket.png" alt="Rocket">
+      <span>রকেট (Rocket)</span>
+    </button>
+
+    <p id="mobile-payment-message"></p>
+  </div>
+</div>
 })();
 </script>
 </body>
