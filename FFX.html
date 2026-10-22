@@ -565,16 +565,48 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
   <section class="pv-box">
     <div class="pv-head"><span class="n">3</span><h2>Select one option</h2></div>
     <div class="pv-body">
-      <div class="po-grid">
-        <div role="button" tabindex="0" class="po on" data-pay="Wallet Pay">
-          <div class="pbx"><img src="wallet.jpg" alt="" onerror="this.style.display='none'"></div>
-          <div class="pft">Wallet Pay</div>
-        </div>
-        <div role="button" tabindex="0" class="po" data-pay="Instant Pay">
-          <div class="pbx"><img src="andmoney.jpg" alt="" onerror="this.style.display='none'"></div>
-          <div class="pft">Instant Pay</div>
-        </div>
+  <div class="po-grid">
+
+    <div role="button" tabindex="0"
+         class="po on" data-pay="Wallet Pay">
+      <div class="pbx">
+        <img src="wallet.jpg" alt="Wallet Pay">
       </div>
+      <div class="pft">Wallet Pay</div>
+    </div>
+
+    <div role="button" tabindex="0"
+         class="po" data-pay="Instant Pay">
+      <div class="pbx">
+        <img src="andmoney.jpg" alt="Instant Pay">
+      </div>
+      <div class="pft">Instant Pay</div>
+    </div>
+
+  </div>
+
+  <div id="mobile-payment-options" hidden>
+    <button type="button" class="payment-method"
+            data-method="bKash">
+      <img src="bkash.png" alt="bKash">
+      <span>বিকাশ (bKash)</span>
+    </button>
+
+    <button type="button" class="payment-method"
+            data-method="Nagad">
+      <img src="nagad.png" alt="Nagad">
+      <span>নগদ (Nagad)</span>
+    </button>
+
+    <button type="button" class="payment-method"
+            data-method="Rocket">
+      <img src="rocket.png" alt="Rocket">
+      <span>রকেট (Rocket)</span>
+    </button>
+
+    <p id="mobile-payment-message"></p>
+  </div>
+</div>
 
       <p class="hint"><svg class="i"><use href="#info"/></svg><span>প্রোডাক্ট কিনতে আপনার প্রয়োজন <b id="needAmt">0</b> টাকা।</span></p>
       <p class="hint warnx" id="loginWarn"><svg class="i"><use href="#info"/></svg><span>Please Login To Purchase</span></p>
